@@ -1,9 +1,25 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="LENICO"
 
+#ZSH_THEME='bureau'   **# <--- THIS IS interesting**
+# ZSH_THEME='darkblood'  **# <--- THIS IS interesting**
+
+
+#ZSH_THEME='dstufft'
+
+
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent zsh-autosuggestions direnv sudo)
+plugins=(
+        gitfast
+        last-working-dir
+        common-aliases
+        zsh-syntax-highlighting
+        history-substring-search
+        pyenv ssh-agent
+        zsh-autosuggestions
+        direnv
+        sudo)
 
 # Disable warning about insecure completion-dependent directories
 ZSH_DISABLE_COMPFIX=true
@@ -19,7 +35,7 @@ type -a rbenv > /dev/null && eval "$(rbenv init -)"
 
 # Load pyenv (to manage your Python versions)
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+='🐍 $(pyenv version-name)' && export python_prompt='[🐍 $(pyenv version-name)]'
+type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" #&& RPROMPT+='🐍 $(pyenv version-name)' && export python_prompt='[🐍 $(pyenv version-name)]'
 
 
 
