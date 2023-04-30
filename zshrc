@@ -1,13 +1,6 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="LENICO"
 
-#ZSH_THEME='bureau'   **# <--- THIS IS interesting**
-# ZSH_THEME='darkblood'  **# <--- THIS IS interesting**
-
-
-#ZSH_THEME='dstufft'
-
-
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 plugins=(
@@ -37,8 +30,6 @@ type -a rbenv > /dev/null && eval "$(rbenv init -)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" #&& RPROMPT+='🐍 $(pyenv version-name)' && export python_prompt='[🐍 $(pyenv version-name)]'
 
-
-
 # Store your own aliases in the ~/.aliases file and load the here.
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
@@ -54,7 +45,6 @@ export PYTHONBREAKPOINT=ipdb.set_trace
 # Set key for GoogleCloudPlattform as Variable
 export GOOGLE_APPLICATION_CREDENTIALS=/home/david/.google/credentials/google_credentials.json
 export PYTHONPATH="/home/david/code/lewagon/data/04-Decision-Science/01-Project-Setup/context-and-setup"
-
 
 # hooking env - Lenico
 eval "$(direnv hook zsh)"
