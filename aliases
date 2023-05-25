@@ -17,3 +17,6 @@ alias .....='cd ../../../../..'
 alias gs='git status'
 alias gl='git log'
 alias gall='git add --all'
+
+alias python='python3'
+
