@@ -69,6 +69,10 @@ if [[ `uname` =~ "Darwin" ]]; then
   ssh-add -K ~/.ssh/id_ed25519
 fi
 
+# Symlink to zsh theme LENICO
+target="$HOME/.oh-my-zsh/custom/themes/lenico.zsh-theme"
+symlink $PWD/LENICO.zsh-theme $target
+
 # Refresh the current terminal with the newly installed configuration
 exec zsh
 
