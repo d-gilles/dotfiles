@@ -23,7 +23,8 @@ symlink() {
 
 # For all files `$name` in the present folder except `*.sh`, `README.md`, `settings.json`,
 # and `config`, backup the target file located at `~/.$name` and symlink `$name` to `~/.$name`
-for name in aliases gitconfig irbrc rspec zprofile zshrc; do
+# Files removed from this list: irbrc rspec
+for name in aliases gitconfig zprofile zshrc; do
   if [ ! -d "$name" ]; then
     target="$HOME/.$name"
     backup $target
@@ -70,7 +71,7 @@ if [[ `uname` =~ "Darwin" ]]; then
 fi
 
 # Symlink to zsh theme LENICO
-target="$HOME/.oh-my-zsh/custom/themes/lenico.zsh-theme"
+target="$HOME/.oh-my-zsh/themes/lenico.zsh-theme"
 symlink $PWD/LENICO.zsh-theme $target
 
 # Refresh the current terminal with the newly installed configuration
