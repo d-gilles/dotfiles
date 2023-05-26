@@ -71,7 +71,7 @@ if [[ `uname` =~ "Darwin" ]]; then
 fi
 
 # Symlink to zsh theme LENICO
-target="$HOME/.oh-my-zsh/themes/lenico.zsh-theme"
+target="$HOME/.oh-my-zsh/themes/LENICO.zsh-theme"
 symlink $PWD/LENICO.zsh-theme $target
 
 # Get the computer name
@@ -87,4 +87,3 @@ fi
 
 # Refresh the current terminal with the newly installed configuration
 exec zsh
-
