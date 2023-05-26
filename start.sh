@@ -4,6 +4,8 @@ sudo apt-get update
 sudo apt-get install -y zsh
 sudo apt-get install -y pip
 curl https://pyenv.run | bash
+sudo pip install virtualenv
+sudo apt install python3.10-venv
 
 echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(pyenv init --path)"' >> ~/.bashrc
