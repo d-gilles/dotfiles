@@ -80,7 +80,7 @@ computername=$(hostname)
 # Check if the computer name starts with "LENICO"
 if [[ $computername == LENICO* ]]; then
     # If yes, create a symbolic link
-    ln -s /mnt/c/Users/info/.ssh ~/
+    echo "Computer is LENICO"
 else
     echo "Computer is not LENICO"
 fi
