@@ -2,3 +2,11 @@ Host *
   UseKeychain yes
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_ed25519
+
+
+Host taxifare-2
+HostName 35.234.126.223
+   UseKeychain yes
+   AddKeysToAgent yes
+   IdentityFile ~/.ssh/taxifare
+   User david

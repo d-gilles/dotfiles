@@ -17,3 +17,8 @@ alias .....='cd ../../../../..'
 alias gs='git status'
 alias gl='git log'
 alias gall='git add --all'
+
+alias pyhton='python3'
+
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
