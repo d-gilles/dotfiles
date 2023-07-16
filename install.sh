@@ -74,7 +74,16 @@ fi
 target="$HOME/.oh-my-zsh/themes/LENICO.zsh-theme"
 symlink $PWD/LENICO.zsh-theme $target
 
+# Get the computer name
+computername=$(hostname)
+
+# Check if the computer name starts with "LENICO"
+if [[ $computername == LENICO* ]]; then
+    # If yes, create a symbolic link
+    echo "Computer is LENICO"
+else
+    echo "Computer is not LENICO"
+fi
+
 # Refresh the current terminal with the newly installed configuration
 exec zsh
-
-echo "👌 Carry on with git setup!"
