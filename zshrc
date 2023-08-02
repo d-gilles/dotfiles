@@ -1,8 +1,9 @@
+
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="LENICO"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 plugins=(
         gitfast
         last-working-dir
@@ -10,7 +11,6 @@ plugins=(
         zsh-syntax-highlighting
         history-substring-search
         pyenv ssh-agent
-        zsh-autosuggestions
         direnv
         sudo)
 
@@ -52,3 +52,5 @@ complete -o nospace -C /usr/bin/terraform terraform
 _name=$(echo $USER | awk '{print toupper(substr($0,1,1))substr($0,2)}')
 
 echo "👋  Hi $_name, welcome back to your terminal. Let's code something amazing today! 🚀"
+export BROWSER="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
+export GH_BROWSER="'/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'"

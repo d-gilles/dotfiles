@@ -1,3 +1,4 @@
+
 #!/bin/zsh
 
 # Define a function which rename a `target` file to `target.backup` if the file
