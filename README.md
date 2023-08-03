@@ -80,7 +80,7 @@ sudo apt install git -y
 
 ## Installation
 
-1. Clone the repo: `git clone git@github.com:d-gilles/dotfiles.git`
+1. Clone the repo: `git clone https://github.com/d-gilles/dotfiles.git`
 2. Run `bash ./start.sh`
 3. Run `bash ./install.sh`
 
