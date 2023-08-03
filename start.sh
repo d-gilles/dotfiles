@@ -1,13 +1,23 @@
 #!/bin/bash
 
+# Exit on any error
+set -e
+
 # Update the package lists for upgrades and new package installations
-sudo apt update
+sudo apt update -y
+
+# Upgrade all the existing packages
+sudo apt upgrade -y
+
 
 # Grouped installations
 sudo apt install -y zsh curl tree python3.10-venv
 
 # Check if pip is installed, if not, install it
-type pip || sudo apt install -y python-pip
+type pip3 || sudo apt install -y python3-pip
+
+# Clean up unnecessary packages
+sudo apt autoremove -y
 
 # Pyenv and Virtualenv installations
 curl https://pyenv.run | bash
@@ -17,6 +27,8 @@ sudo pip install virtualenv
 echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(pyenv init --path)"' >> ~/.bashrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+
+sh install.sh
 
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -54,3 +66,6 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 # verify docker is running
 sudo docker run hello-world
+
+# Clean up
+sudo apt autoremove
