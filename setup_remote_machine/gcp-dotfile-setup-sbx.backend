@@ -1,0 +1,3 @@
+bucket                      = "dotfile-setup-sbx-tf-state"
+prefix                      = "terraform/state"
+impersonate_service_account = "sa-dotfile-setup-tf-sbx@lenico-intern.iam.gserviceaccount.com"
