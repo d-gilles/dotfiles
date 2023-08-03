@@ -50,11 +50,15 @@ else
 fi
 
 # Symlink VS Code settings
-for name in settings.json keybindings.json; do
-  target_vscode="$code_path/$name"
-  backup $target_vscode
-  symlink $PWD/$name $target_vscode
-done
+if [ -d "$code_path" ]; then
+  for name in settings.json keybindings.json; do
+    target_vscode="$code_path/$name"
+    backup $target_vscode
+    symlink $PWD/$name $target_vscode
+  done
+else
+  echo "-----> VS Code path not found, skipping symlink creation"
+fi
 
 # Handle macOS specifics
 if [[ `uname` =~ "Darwin" ]]; then

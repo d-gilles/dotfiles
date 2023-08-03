@@ -22,7 +22,11 @@ type pip3 || sudo apt install -y python3-pip
 sudo apt autoremove -y
 
 # Pyenv and Virtualenv installations
-curl https://pyenv.run | bash
+if ! command -v pyenv &> /dev/null
+then
+  curl https://pyenv.run | bash
+fi
+
 sudo pip install virtualenv
 
 # Setting the PATH for Pyenv
