@@ -9,6 +9,8 @@ sudo apt update -y
 # Upgrade all the existing packages
 sudo apt upgrade -y
 
+# Make sure to get python 3.10
+sudo add-apt-repository ppa:deadsnakes/ppa
 
 # Grouped installations
 sudo apt install -y zsh curl tree python3.10-venv
