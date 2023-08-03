@@ -90,7 +90,7 @@ sudo apt install git -y
 
 1. Clone the repo: `git clone https://github.com/d-gilles/dotfiles.git`
 2. cd into the folder `cd dotfiles`
-3. Run `bash ./start.sh`
+3. Run `sh start.sh`
 4. Run `bash ./install.sh`
 
 Enjoy 🙂
