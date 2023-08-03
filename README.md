@@ -4,6 +4,15 @@ This repository serves as the foundation for my development environment. It enco
 
 In addition to these config files, you can find a terrafrom configuration for GCP in the ```setup_remote_mashine/``` folder. This can be used to set up a remote VM as a development environment on Google Cloud Plattform.
 
+## Credit
+This configuration repository draws inspiration from and is based on the [dotfiles repo](https://github.com/lewagon/dotfiles) by Le Wagon. A heartfelt thank you to the Le Wagon team for laying the groundwork and sharing their invaluable configurations. It has significantly streamlined the setup process and continues to serve as a solid foundation for personal customizations.
+The main changes I made were:
+1. Cleaning up a lot of stuff I don't need because I'm not a webdev and don't use a Mac.
+2. Customizing the terminal theme for python/pyenv/git
+3. Automating the whole setup process to just clone the repo and execute one script.
+4. Adding some tools and aliases that I like to use.
+5. Setting up the Terraform configuration.
+
 ## Contents & Descriptions
 
 1. **start.sh**:
@@ -70,9 +79,7 @@ Before you proceed with the setup and installation of this configuration reposit
 
 Operating System: This setup is tailored for Ubuntu-based systems. Using a different distribution or operating system might require adjustments.
 
-Git: Ensure you have Git installed to clone the repository and handle version control.
-
-Installation:
+Git: Ensure you have Git installed to clone the repository and handle version control. If you dont have it:
 ```
 sudo apt update
 sudo apt install git -y
@@ -87,9 +94,6 @@ sudo apt install git -y
 4. Run `bash ./install.sh`
 
 Enjoy 🙂
-
-## Credit
-This configuration repository draws inspiration from and is based on the [dotfiles repo](https://github.com/lewagon/dotfiles) by Le Wagon. A heartfelt thank you to the Le Wagon team for laying the groundwork and sharing their invaluable configurations. It has significantly streamlined the setup process and continues to serve as a solid foundation for personal customizations.
 
 
 ## Contribution:
