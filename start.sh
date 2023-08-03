@@ -35,6 +35,10 @@ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
 echo "installing Oh MY Zsh ..."
 yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
 
+# Insatll vs code server
+curl -fsSL https://code-server.dev/install.sh | sh
+
+
 # Run install.sh
 (zsh install.sh) || true
 
