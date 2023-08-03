@@ -84,7 +84,7 @@ sudo apt install git -y
 2. Run `bash ./start.sh`
 3. Run `bash ./install.sh`
 
-Enjoy :)
+Enjoy 🙂
 
 ## Credit
 This configuration repository draws inspiration from and is based on the dotfiles repo by Le Wagon. A heartfelt thank you to the Le Wagon team for laying the groundwork and sharing their invaluable configurations. It has significantly streamlined the setup process and continues to serve as a solid foundation for personal customizations.
