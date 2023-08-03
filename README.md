@@ -2,6 +2,7 @@
 
 This repository serves as the foundation for my development environment. It encompasses a series of configuration files, scripts, and vital tool setups crucial for orchestrating a new machine in accordance with my preferences.
 
+In addition to these config files, you can find a terrafrom configuration for GCP in the ```setup_remote_mashine/``` folder. This can be used to set up a remote VM as a development environment on Google Cloud Plattform.
 
 ## Contents & Descriptions
 
@@ -80,11 +81,11 @@ sudo apt install git -y
 
 ## Installation
 
-1. Clone the repo: `git clone git@github.com:d-gilles/dotfiles.git`
+1. Clone the repo: `git clone https://github.com/d-gilles/dotfiles.git`
 2. Run `bash ./start.sh`
 3. Run `bash ./install.sh`
 
-Enjoy :)
+Enjoy 🙂
 
 ## Credit
 This configuration repository draws inspiration from and is based on the dotfiles repo by Le Wagon. A heartfelt thank you to the Le Wagon team for laying the groundwork and sharing their invaluable configurations. It has significantly streamlined the setup process and continues to serve as a solid foundation for personal customizations.
