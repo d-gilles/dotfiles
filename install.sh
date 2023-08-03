@@ -32,9 +32,9 @@ install_zsh_plugins() {
 # Symlink config files
 for name in aliases gitconfig zprofile zshrc; do
   if [ ! -d "$name" ]; then
-    local target="$HOME/.$name"
-    backup $target
-    symlink $PWD/$name $target
+    target_path="$HOME/.$name"
+    backup $target_path
+    symlink $PWD/$name $target_path
   fi
 done
 
