@@ -14,7 +14,6 @@ sudo add-apt-repository -y ppa:deadsnakes/ppa
 
 # Grouped installations
 sudo apt install -y zsh curl tree python3.10-venv
-curl -sfL https://direnv.net/install.sh | bash
 
 # Check if pip is installed, if not, install it
 type pip3 || sudo apt install -y python3-pip
@@ -32,12 +31,16 @@ echo 'eval "$(pyenv init --path)"' >> ~/.bashrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
 
 
-
 # Install Oh My Zsh
 echo "installing Oh MY Zsh ..."
 yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
 
+# Run install.sh
 (zsh install.sh)
+
+# Install direnv
+sudo apt-get update; sudo apt-get install direnv
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
 
 # Fetch the GPG key for GitHub CLI's official APT repository and add it to the keyring.
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /usr/share/keyrings/githubcli-archive-keyring.gpg > /dev/null
