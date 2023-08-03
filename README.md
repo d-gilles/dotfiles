@@ -89,7 +89,7 @@ sudo apt install git -y
 Enjoy 🙂
 
 ## Credit
-This configuration repository draws inspiration from and is based on the [dotfiles repo](https://github.com/lewagon/data-setup) by Le Wagon. A heartfelt thank you to the Le Wagon team for laying the groundwork and sharing their invaluable configurations. It has significantly streamlined the setup process and continues to serve as a solid foundation for personal customizations.
+This configuration repository draws inspiration from and is based on the [dotfiles repo](https://github.com/lewagon/dotfiles) by Le Wagon. A heartfelt thank you to the Le Wagon team for laying the groundwork and sharing their invaluable configurations. It has significantly streamlined the setup process and continues to serve as a solid foundation for personal customizations.
 
 
 ## Contribution:
