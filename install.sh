@@ -51,9 +51,9 @@ fi
 
 # Symlink VS Code settings
 for name in settings.json keybindings.json; do
-  local target="$code_path/$name"
-  backup $target
-  symlink $PWD/$name $target
+  target_vscode="$code_path/$name"
+  backup $target_vscode
+  symlink $PWD/$name $target_vscode
 done
 
 # Handle macOS specifics
