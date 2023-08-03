@@ -36,7 +36,7 @@ echo "installing Oh MY Zsh ..."
 yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
 
 # Run install.sh
-(zsh install.sh)
+(zsh install.sh) || true
 
 # Install direnv
 sudo apt-get update; sudo apt-get install direnv
