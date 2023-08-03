@@ -6,7 +6,7 @@ provider "google" {
 }
 
 resource "google_compute_instance" "default" {
-  name         = "test-dev"
+  name         = "test-dev-1"
   machine_type = "f1-micro"
 
   boot_disk {
