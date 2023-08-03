@@ -16,3 +16,7 @@ tf_plan:
 tf_apply:
 	@echo "GOOGLE_APPLICATION_CREDENTIALS set to: ${GOOGLE_APPLICATION_CREDENTIALS}"
 	terraform apply tf.plan
+
+tf_destroy:
+	@echo "GOOGLE_APPLICATION_CREDENTIALS set to: ${GOOGLE_APPLICATION_CREDENTIALS}"
+	@terraform destroy -var-file=gcp-dotfile-setup-sbx.tfvars
