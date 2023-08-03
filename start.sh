@@ -34,7 +34,7 @@ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
 
 # Install Oh My Zsh
 echo "installing Oh MY Zsh ..."
-yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
 
 zsh install.sh
 
