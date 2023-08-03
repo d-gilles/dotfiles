@@ -2,6 +2,7 @@
 
 This repository serves as the foundation for my development environment. It encompasses a series of configuration files, scripts, and vital tool setups crucial for orchestrating a new machine in accordance with my preferences.
 
+In addition to these config files, you can find a terrafrom configuration for GCP in the ```setup_remote_mashine/``` folder. This can be used to set up a remote VM as a development environment on Google Cloud Plattform.
 
 ## Contents & Descriptions
 
