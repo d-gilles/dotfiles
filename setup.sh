@@ -11,4 +11,4 @@ echo "Configuring zsh"
 echo "done"
 echo ""
 
-exec zsh setup2.sh
+exec zsh scripts/setup2.sh

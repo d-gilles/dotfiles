@@ -18,8 +18,13 @@ echo "Loading VS Code extentions"
 echo "All extention loaded"
 echo ""
 
+echo "Setting up environment"
+(zsh scripts/env.sh) || true
+echo "done"
+echo ""
+
 clear
 echo "All systems up and running ... we are good to go 👍"
 echo "If you also want to use terraform, please run the following command:"
-echo ">zsh scripts/setup_terraform.sh"
+echo "zsh scripts/setup_terraform.sh"
 zsh
