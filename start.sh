@@ -37,11 +37,15 @@ echo "Installing Pyenv and Virtualenv"
 if ! command -v pyenv &> /dev/null
 then
   curl https://pyenv.run | bash
+  sudo pip install virtualenv
+  echo "done"
+  echo ""
+else
+  echo "Pyenv is already installed"
+  echo ""
 fi
 
-sudo pip install virtualenv
-echo "done"
-echo ""
+
 
 echo "Setting the PATH for Pyenv"
 echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc

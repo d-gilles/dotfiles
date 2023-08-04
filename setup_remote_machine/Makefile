@@ -19,3 +19,6 @@ cleanup:
 	rm -rf .terraform .terraform.lock.hcl tf.plan
 	gsutil rm gs://dotfile-setup-sbx-tf-state/terraform/state/default.tfstate
 	gsutil rm gs://dotfile-setup-sbx-tf-state/terraform/state/gcp-dotfile-setup-sbx.tfstate
+
+add_ssh:
+	gcloud compute instances add-metadata $(VM_name) --metadata-from-file ssh-keys=/home/david/.ssh/id_rsa.pub
