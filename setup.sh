@@ -7,25 +7,27 @@ echo "done"
 echo ""
 
 echo "Configuring zsh"
-(zshscripts/ config.sh) || true
+(zsh scripts/config.sh) || true
 echo "done"
 echo ""
 
+exec zsh -l
+
 # do python installation
 echo "Installing Python stuff"
-(sh scripts/python.sh) || true
+(zsh scripts/python.sh) || true
 echo "done"
 echo ""
 
 # do setup installation
 echo "Installing other stuff"
-(sh scripts/other_install.sh) || true
+(zsh scripts/other_install.sh) || true
 echo "done"
 echo ""
 
 # load VS Code extentions
 echo "Loading VS Code extentions"
-(sh scripts/vs-code-extentions.sh) || true
+(zsh scripts/vs-code-extentions.sh) || true
 echo "All extention loaded"
 echo ""
 

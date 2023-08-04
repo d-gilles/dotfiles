@@ -7,6 +7,54 @@ set -e
 echo "HERE WE GO!"
 echo "setting up Python environment ..."
 
+echo "Installing Pyenv and Virtualenv"
+if command -v pyenv &> /dev/null; then
+  echo "Pyenv is already installed"
+  echo ""
+else
+  curl https://pyenv.run | bash
+  sudo pip install virtualenv
+  echo "done"
+  echo ""
+fi
+
+echo "Setting the PATH for Pyenv"
+# check if pyenv is in the PATH
+if grep -q "export PATH=\"\$HOME/.pyenv/bin:\$PATH\"" ~/.bashrc; then
+  echo "Pyenv is already in the PATH"
+else
+  echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc
+  echo "done"
+  echo ""
+fi
+
+# check if pyenv init is in the PATH
+if grep -q "eval \"\$(pyenv init --path)\"" ~/.bashrc; then
+  echo "Pyenv init is already in the PATH"
+else
+  echo 'eval "$(pyenv init --path)"' >> ~/.bashrc
+  echo "done"
+  echo ""
+fi
+
+# check if pyenv virtualenv-init - is in the PATH
+if grep -q "eval \"\$(pyenv virtualenv-init -)\"" ~/.bashrc; then
+  echo "Pyenv virtualenv-init is already in the PATH"
+else
+  echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+  echo "done"
+  echo ""
+fi
+
+echo "Installing python3.10-venv"
+if dpkg -s python3.10-venv &> /dev/null; then
+  echo "python3.10-venv is already installed"
+else
+  sudo apt install -y python3.10-venv
+fi
+echo "done"
+echo ""
+
 pyenv install --skip-existing 3.10.6 && echo "Python 3.10.6 is installed successfully"
 
 # check if virtualenv sandbox exists

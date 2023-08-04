@@ -25,7 +25,7 @@ echo ""
 
 
 echo "Installing zsh"
-if dpkg -s zsh &> /dev/null; then
+if [ command -v zsh]; then
   echo "zsh is already installed"
 else
   sudo apt install -y zsh
@@ -51,15 +51,6 @@ fi
 echo "done"
 echo ""
 
-echo "Installing python3.10-venv"
-if dpkg -s python3.10-venv &> /dev/null; then
-  echo "python3.10-venv is already installed"
-else
-  sudo apt install -y python3.10-venv
-fi
-echo "done"
-echo ""
-
 echo "Checking if pip is installed, if not, installing it"
 if type pip3; then
   echo "pip is already installed"
@@ -72,45 +63,6 @@ echo "Cleaning up unnecessary packages"
 sudo apt autoremove -y
 echo "done"
 echo ""
-
-echo "Installing Pyenv and Virtualenv"
-if command -v pyenv &> /dev/null; then
-  echo "Pyenv is already installed"
-  echo ""
-else
-  curl https://pyenv.run | bash
-  sudo pip install virtualenv
-  echo "done"
-  echo ""
-fi
-
-echo "Setting the PATH for Pyenv"
-# check if pyenv is in the PATH
-if grep -q "export PATH=\"\$HOME/.pyenv/bin:\$PATH\"" ~/.bashrc; then
-  echo "Pyenv is already in the PATH"
-else
-  echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc
-  echo "done"
-  echo ""
-fi
-
-# check if pyenv init is in the PATH
-if grep -q "eval \"\$(pyenv init --path)\"" ~/.bashrc; then
-  echo "Pyenv init is already in the PATH"
-else
-  echo 'eval "$(pyenv init --path)"' >> ~/.bashrc
-  echo "done"
-  echo ""
-fi
-
-# check if pyenv virtualenv-init - is in the PATH
-if grep -q "eval \"\$(pyenv virtualenv-init -)\"" ~/.bashrc; then
-  echo "Pyenv virtualenv-init is already in the PATH"
-else
-  echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
-  echo "done"
-  echo ""
-fi
 
 echo "Installing Oh My Zsh"
 # check if oh-my-zsh is installed
