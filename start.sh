@@ -140,14 +140,27 @@ echo "Loading VS Code extentions"
 echo "All extention loaded"
 echo ""
 
-python3 --version
-
 clear
 
-echo "All systems up and running ... we are good to go 👍"
+
 
 # Activate new configuration
 exec zsh
 
 echo "HERE WE GO!"
 echo "setting up Python environment ..."
+
+pyenv install 3.10.6
+pyenv virtualenv 3.10.6 sandbox
+pyenv global sandbox
+pyenv activate sandbox
+echo "done"
+
+echo "Installing Python packages"
+pip install -r requirements.txt
+
+# update pip
+pip install --upgrade pip
+echo "done"
+
+echo "All systems up and running ... we are good to go 👍"
