@@ -47,15 +47,15 @@ else
 fi
 
 echo "Installing python3.10-venv"
-if dpkg -s python3.10-venv &> /dev/null; then
-  echo "python3.10-venv is already installed"
-else
-  sudo apt install -y python3.10-venv
-fi
+sudo apt install python3.10-venv
 echo "done"
 echo ""
 
-pyenv install --skip-existing 3.10.6 && echo "Python 3.10.6 is installed successfully"
+sudo apt-get update
+sudo apt-get install -y libbz2-dev ncurses-dev libffi-dev libreadline-dev libssl-dev
+
+pyenv install 3.10.6
+echo "Python 3.10.6 is installed successfully"
 
 # check if virtualenv sandbox exists
 if pyenv virtualenvs | grep -q sandbox; then
