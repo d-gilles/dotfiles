@@ -5,13 +5,12 @@ set -e
 
 # Activate new configuration
 echo "HERE WE GO!"
-echo "setting up Python environment ..."
+echo "Setting up Python environment ..."
 
-echo "Installing Pyenv and Virtualenv"
-if command -v pyenv &> /dev/null; then
+if [ -d /home/david/.pyenv ]; then
   echo "Pyenv is already installed"
-  echo ""
 else
+  echo "Installing Pyenv"
   curl https://pyenv.run | bash
   sudo pip install virtualenv
   echo "done"
@@ -54,6 +53,11 @@ echo ""
 sudo apt update
 sudo apt install -y libbz2-dev ncurses-dev libffi-dev libreadline-dev libssl-dev libsqlite3-dev liblzma-dev
 
-
-pyenv install 3.10.6
-echo "Python 3.10.6 is installed successfully"
+if pyenv versions | grep -q "3.10.6"; then
+  echo "Python 3.10.6 is already installed"
+else
+  echo "Installing Python 3.10.6"
+  pyenv install 3.10.6
+  echo "Python 3.10.6 is installed successfully"
+  echo ""
+fi

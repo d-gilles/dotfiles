@@ -31,7 +31,7 @@ fi
 
 echo ""
 echo "Installing Python packages"
+python3.10 -m pip install --upgrade pip && echo "pip is upgraded successfully"
 pip install -q -r requirements.txt && echo "" && echo "Python packages are installed successfully"
-pip install -q --upgrade pip && echo "pip is upgraded successfully"
 echo ""
 echo " All Python related stuff is done 👍"

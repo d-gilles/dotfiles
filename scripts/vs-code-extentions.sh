@@ -30,5 +30,3 @@ code --install-extension ms-vscode-remote.vscode-remote-extensionpack
 
 # Installing Makefile extension for VS Code
 code --install-extension ms-vscode.makefile-tools
-echo "done"
-echo ""
