@@ -6,8 +6,8 @@ provider "google" {
 }
 
 resource "google_compute_instance" "default" {
-  name         = "test-dev-2"
-  machine_type = "f1-micro"
+  name         = "test-dev"
+  machine_type = "e2-standard-2"
 
   boot_disk {
     initialize_params {

@@ -45,8 +45,6 @@ else
   echo ""
 fi
 
-
-
 echo "Setting the PATH for Pyenv"
 echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(pyenv init --path)"' >> ~/.bashrc
@@ -58,6 +56,8 @@ echo "Installing Oh My Zsh"
 yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
 echo "done"
 echo ""
+
+
 
 echo "Installing vs code server"
 curl -fsSL https://code-server.dev/install.sh | sh
@@ -71,7 +71,11 @@ echo ""
 
 echo "Installing direnv"
 sudo apt-get update; sudo apt-get install direnv
-echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+if grep -q "eval \"\$(direnv hook zsh)\"" ~/.zshrc; then
+  echo "direnv is already installed"
+else
+  echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+fi
 echo "done"
 echo ""
 
@@ -116,8 +120,8 @@ echo "done"
 echo ""
 
 echo "Installing Docker Engine"
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 echo "done"
 echo ""
 
@@ -130,3 +134,20 @@ echo "Cleaning up"
 sudo apt autoremove
 echo "done"
 echo ""
+
+echo "Loading VS Code extentions"
+(sh vs-code-extentions.sh) || true
+echo "All extention loaded"
+echo ""
+
+python3 --version
+
+clear
+
+echo "All systems up and running ... we are good to go 👍"
+
+# Activate new configuration
+exec zsh
+
+echo "HERE WE GO!"
+echo "setting up Python environment ..."

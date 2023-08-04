@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "Loading some extentions for VS Code"
 # Install the Docker extension
 code --install-extension ms-azuretools.vscode-docker
 
@@ -26,3 +27,8 @@ code --install-extension ms-python.python
 
 # Install the Remote Development extension
 code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+
+# Installing Makefile extension for VS Code
+code --install-extension ms-vscode.makefile-tools
+echo "done"
+echo ""
