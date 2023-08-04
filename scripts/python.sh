@@ -46,7 +46,7 @@ else
 fi
 
 echo "Installing python3.10-venv"
-sudo apt install python3.10-venv
+sudo apt install -y python3.10-venv
 echo "done"
 echo ""
 
@@ -61,3 +61,8 @@ else
   echo "Python 3.10.6 is installed successfully"
   echo ""
 fi
+
+echo "Cleaning up"
+sudo apt autoremove
+echo "done"
+echo ""
