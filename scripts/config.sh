@@ -1,13 +1,19 @@
 #!/bin/zsh
 
+# Exit on any error
+set -e
+
 # Functions
 backup() {
   local target=$1
   if [[ -e "$target" && ! -L "$target" ]]; then
     mv "$target" "$target.backup"
     echo "-----> Moved your old $target config file to $target.backup"
+  else
+    echo "-----> No backups needed"
   fi
 }
+
 
 symlink() {
   local file=$1
@@ -15,6 +21,8 @@ symlink() {
   if [ ! -e "$link" ]; then
     echo "-----> Symlinking your new $link"
     ln -s $file $link
+  else
+    echo "-----> $link already exists"
   fi
 }
 
@@ -72,25 +80,16 @@ fi
 symlink $PWD/LENICO.zsh-theme "$HOME/.oh-my-zsh/themes/LENICO.zsh-theme"
 
 # Symlink the .ssh folder on WSL to the .ssh folder on Windows
-if [[ `uname` =~ "MINGW" ]]; then
-  echo "System is Windows"
-  echo "-----> Symlinking your new .ssh folder"
-  target=~/.ssh
-  backup $target
-  symlink /mnt/c/Users/david/.ssh $target
-  echo ""
-else
-  echo "System is not Windows"
-  echo""
-fi
+# if [[ `uname` =~ "MINGW" ]]; then
+#   echo "System is Windows"
+#   echo "-----> Symlinking your new .ssh folder"
+#   target=~/.ssh
+#   backup $target
+#   symlink /mnt/c/Users/david/.ssh $target
+#   echo ""
+# else
+#   echo "System is not Windows"
+#   echo""
+# fi
 
-
-# Check computer name
-if [[ $(hostname) == LENICO* ]]; then
-    echo "Computer is LENICO"
-else
-    echo "Computer is not LENICO"
-fi
-
-# Activate new configuration
-exec zsh
+echo "-----> Done!"

@@ -18,3 +18,6 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%B%{%{$fg[blue]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" 🔴 %{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=" 🟢 %{$reset_color%}"
+
+# show the exitcode of the last command on the right side of the prompt
+RPROMPT="$return_code"

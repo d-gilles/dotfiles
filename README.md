@@ -4,6 +4,26 @@ This repository serves as the foundation for my development environment. It enco
 
 In addition to these config files, you can find a terrafrom configuration for GCP in the ```setup_remote_mashine/``` folder. This can be used to set up a remote VM as a development environment on Google Cloud Plattform.
 
+## Prerequisites
+Before you proceed with the setup and installation of this configuration repository, ensure that you meet the following prerequisites:
+
+Operating System: This setup is tailored for Ubuntu-based systems. Using a different distribution or operating system might require adjustments.
+
+Git: Ensure you have Git installed to clone the repository and handle version control. If you dont have it:
+```
+sudo apt update
+sudo apt install git -y
+```
+
+## Installation
+
+1. Clone the repo: `git clone https://github.com/d-gilles/dotfiles.git`
+2. cd into the folder `cd dotfiles`
+3. Run `sh start.sh`
+4. Run `bash ./install.sh`
+
+Enjoy 🙂
+
 ## Credit
 This configuration repository draws inspiration from and is based on the [dotfiles repo](https://github.com/lewagon/dotfiles) by Le Wagon. A heartfelt thank you to the Le Wagon team for laying the groundwork and sharing their invaluable configurations. It has significantly streamlined the setup process and continues to serve as a solid foundation for personal customizations.
 The main changes I made were:
@@ -12,6 +32,7 @@ The main changes I made were:
 3. Automating the whole setup process to just clone the repo and execute one script.
 4. Adding some tools and aliases that I like to use.
 5. Setting up the Terraform configuration.
+
 
 ## Contents & Descriptions
 
@@ -73,27 +94,6 @@ The main changes I made were:
 
 11. **Prompts.txt**:
     - Curated prompts for ChatGPT. like the one I used to create the basic of this README.
-
-## Prerequisites
-Before you proceed with the setup and installation of this configuration repository, ensure that you meet the following prerequisites:
-
-Operating System: This setup is tailored for Ubuntu-based systems. Using a different distribution or operating system might require adjustments.
-
-Git: Ensure you have Git installed to clone the repository and handle version control. If you dont have it:
-```
-sudo apt update
-sudo apt install git -y
-```
-
-
-## Installation
-
-1. Clone the repo: `git clone https://github.com/d-gilles/dotfiles.git`
-2. cd into the folder `cd dotfiles`
-3. Run `sh start.sh`
-4. Run `bash ./install.sh`
-
-Enjoy 🙂
 
 
 ## Contribution:
