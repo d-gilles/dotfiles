@@ -20,34 +20,17 @@ fi
 echo "done"
 echo ""
 
-echo "Fetching the GPG key for GitHub CLI's official APT repository and adding it to the keyring."
+echo "Install Github cli."
 # Check if the keyring file exists
-if [ -f /usr/share/keyrings/githubcli-archive-keyring.gpg ]; then
-  echo "Keyring file already exists"
+if command -v gh >/dev/null ; then
+  echo "Github cli already installed"
 else
-  echo "Keyring file does not exist"
-  curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /usr/share/keyrings/githubcli-archive-keyring.gpg > /dev/null
-  echo "Granting read permissions on the keyring file."
-  sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
-fi
-echo "done"
-echo ""
-
-
-echo "Adding GitHub CLI's official APT repository to the system's list of sources."
-if [ -e /etc/apt/sources.list.d/github-cli.list ]; then
-  echo "GitHub CLI's official APT repository already exists"
-else
-  echo "GitHub CLI's official APT repository will be added"
-  echo "Updating the package list."
-fi
-if command -v gh &> /dev/null; then
-  echo "GitHub CLI is installed"
-else
-  sudo apt update
-  echo "Installing the GitHub CLI."
-  sudo apt install gh -y
-  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+  type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+  curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+  && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+  && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+  && sudo apt update \
+  && sudo apt install gh -y
 fi
 echo "done"
 echo ""
