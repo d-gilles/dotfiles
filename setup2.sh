@@ -1,6 +1,10 @@
 #!/bin/zsh
 
 # do setup installation
+echo "checking pyenv environment"
+(zsh scripts/env.sh) || true
+
+# do setup installation
 echo "Installing other stuff"
 (zsh scripts/other_install.sh) || true
 

@@ -3,13 +3,6 @@
 # Exit on any error
 set -e
 
-
-# echo "Installing vs code server"
-# curl -fsSL https://code-server.dev/install.sh | sh
-# echo "done"
-# echo ""
-
-
 echo "Installing direnv"
 sudo apt-get update; sudo apt-get install direnv
 if grep -q "eval \"\$(direnv hook zsh)\"" ~/.zshrc; then

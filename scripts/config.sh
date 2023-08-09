@@ -14,7 +14,6 @@ backup() {
   fi
 }
 
-
 symlink() {
   local file=$1
   local link=$2
@@ -50,12 +49,8 @@ install_zsh_plugins $PWD
 
 # Determine OS and set VS Code path accordingly
 code_path=""
-if [[ `uname` =~ "Darwin" ]]; then
-  code_path=~/Library/Application\ Support/Code/User
-else
-  code_path=~/.config/Code/User
-  [[ ! -e $code_path ]] && code_path=~/.vscode-server/data/Machine
-fi
+code_path=~/.config/Code/User
+[[ ! -e $code_path ]] && code_path=~/.vscode-server/data/Machine
 
 # Symlink VS Code settings
 if [ -d "$code_path" ]; then
@@ -68,28 +63,7 @@ else
   echo "-----> VS Code path not found, skipping symlink creation"
 fi
 
-# Handle macOS specifics
-if [[ `uname` =~ "Darwin" ]]; then
-  target=~/.ssh/config
-  backup $target
-  symlink $PWD/config $target
-  ssh-add -K ~/.ssh/id_ed25519
-fi
-
 # Symlink Zsh theme
 symlink $PWD/LENICO.zsh-theme "$HOME/.oh-my-zsh/themes/LENICO.zsh-theme"
-
-# Symlink the .ssh folder on WSL to the .ssh folder on Windows
-# if [[ `uname` =~ "MINGW" ]]; then
-#   echo "System is Windows"
-#   echo "-----> Symlinking your new .ssh folder"
-#   target=~/.ssh
-#   backup $target
-#   symlink /mnt/c/Users/david/.ssh $target
-#   echo ""
-# else
-#   echo "System is not Windows"
-#   echo""
-# fi
 
 echo "-----> Done!"
