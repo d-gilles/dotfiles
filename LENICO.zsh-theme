@@ -6,7 +6,7 @@ function virtualenv_info {
 
 PROMPT='
 ╭─⟪${user_host}$(virtualenv_info)$(git_prompt_info)%{$fg_bold[green]%}%~%{$reset_color%}
-╰──%B${user_symbol}%b '
+╰───》'
 
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 local user_host="%(!.%{$fg[red]%}.%B%{$fg[green]%})%n@%m%{$reset_color%} "
